@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from flask_cors import CORS
+from flask_cors import CORS  # to avoid cors error in different frontend like react js or any other
  
 from views.todos import TodoCollection, Todo
 
@@ -14,4 +14,4 @@ api.add_resource(TodoCollection, '/todos')
 api.add_resource(Todo, '/todos/<todo_id>')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
